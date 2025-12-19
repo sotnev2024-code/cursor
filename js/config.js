@@ -2,7 +2,7 @@
  * Конфигурация приложения
  */
 const CONFIG = {
-    API_BASE_URL: 'http://localhost:5000/api', // Полный URL для работы с Flask backend
+    API_BASE_URL: '/api', // Полный URL для работы с Flask backend
     ENDPOINTS: {
         SPECIALISTS: '/specialists',
         CLIENTS: '/clients',
