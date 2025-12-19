@@ -7,7 +7,19 @@ class ApiService {
     }
 
     async request(endpoint, options = {}) {
-        const url = `${this.baseUrl}${endpoint}`;
+        // Формируем URL: если baseUrl относительный, используем текущий протокол
+        let url = `${this.baseUrl}${endpoint}`;
+        
+        // Если baseUrl относительный (начинается с '/'), формируем абсолютный URL с текущим протоколом
+        if (this.baseUrl.startsWith('/')) {
+            url = `${window.location.origin}${this.baseUrl}${endpoint}`;
+        }
+        
+        // Если где-то сформировался URL с http://, принудительно заменяем на https://
+        if (url.startsWith('http://')) {
+            url = url.replace('http://', 'https://');
+        }
+        
         const defaultOptions = {
             headers: {
                 'Content-Type': 'application/json',
