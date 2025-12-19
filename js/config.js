@@ -5,7 +5,7 @@
        // Базовый URL API. Для локальной разработки можно временно раскомментировать строку ниже.
        // API_BASE_URL: 'http://localhost:5000/api',
        // Для продакшена (на сервере) используем относительный путь, чтобы работал HTTPS-домен:
-       API_METHOD_BASE_URL: '/api',
+       API_BASE_URL: '/api',
        ENDPOINTS: {
            SPECIALISTS: '/specialists',
            CLIENTS: '/clients',
