@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tnl Professional - Салон красоты</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        .tagline {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .menu-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: #e74c3c;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .menu-item {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .menu-item:hover {
+            background-color: #eef5ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+
+        .menu-item-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-desc {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .partner-badge {
+            background-color: #ffcc00;
+            color: #333;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .partner-badge i {
+            margin-right: 5px;
+        }
+
+        .info-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            background-color: #eef5ff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #e74c3c;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .info-content p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .stars {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+
+        .rating-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .reviews-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .reviews-link:hover {
+            text-decoration: underline;
+        }
+
+        .salon-description {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .salon-description p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .highlight {
+            background-color: #eef5ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            margin-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .yandex-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .yandex-badge img {
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Tnl <span>Professional</span></div>
+            <div class="tagline">Салон красоты премиум-класса</div>
+        </header>
+
+        <h1 class="main-title">Запись онлайн</h1>
+
+        <!-- Главное меню как на изображении -->
+        <div class="menu-section">
+            <h2 class="section-title"><i class="fas fa-play-circle"></i> С чего начать?</h2>
+
+            <div class="menu-grid">
+                <a href="#" class="menu-item" id="services-btn">
+                    <div class="menu-icon"><i class="fas fa-spa"></i></div>
+                    <div class="menu-item-title">Выбрать услуги</div>
+                    <div class="menu-item-desc">Подберите процедуры</div>
+                </a>
+
+                <a href="#" class="menu-item" id="specialists-btn">
+                    <div class="menu-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="menu-item-title">Выбрать специалиста</div>
+                    <div class="menu-item-desc">Лучшие мастера</div>
+                </a>
+
+                <a href="#" class="menu-item" id="bookings-btn">
+                    <div class="menu-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="menu-item-title">Мои записи</div>
+                    <div class="menu-item-desc">История посещений</div>
+                </a>
+
+                <a href="#" class="menu-item" id="booking-btn">
+                    <div class="menu-icon"><i class="fas fa-images"></i></div>
+                    <div class="menu-item-title">Наши работы</div>
+                    <div class="menu-item-desc">Примеры результатов</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Раздел выбора услуги (контейнер, будет заполняться из service_flow.js) -->
+        <div id="select-service-section"></div>
+
+        <!-- Раздел выбора специалиста (контейнер, будет заполняться из specialist_flow.js) -->
+        <div id="select-specialist-section"></div>
+
+        <!-- Раздел моих записей (контейнер, будет заполняться из bookings_flow.js) -->
+        <div id="select-bookings-section"></div>
+
+        <!-- Раздел "Наши работы" (контейнер, будет заполняться из works_flow.js) -->
+        <div id="select-works-section"></div>
+
+        <!-- Раздел выбора специалиста (контейнер, будет заполняться из specialist_flow.js) -->
+        <div id="select-specialist-section"></div>
+
+        <!-- Информация о салоне -->
+        <div class="info-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> О нашем салоне</h2>
+
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h3>Как добраться</h3>
+                    <p>г. Москва, ул. Тверская, д. 10</p>
+                    <p>м. Тверская, 5 минут пешком</p>
+                    <div class="yandex-badge">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Yandex_icon.svg/1024px-Yandex_icon.svg.png" alt="Yandex">
+                        <span>Яндекс Карты</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-star"></i></div>
+                <div class="info-content">
+                    <h3>Оценки и отзывы</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="rating-value">4.8 из 5</div>
+                    </div>
+                    <p>На основе 247 отзывов</p>
+                    <a href="#" class="reviews-link" id="reviews-btn">Читать отзывы →</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-clock"></i></div>
+                <div class="info-content">
+                    <h3>Часы работы</h3>
+                    <p>Пн-Пт: 9:00 - 21:00</p>
+                    <p>Сб-Вс: 10:00 - 20:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Мои записи -->
+        <div class="info-section" id="my-bookings-section" style="display: none;">
+            <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Мои записи</h2>
+            <div id="my-bookings-content">
+                Загрузка записей...
+            </div>
+        </div>
+
+        <!-- Краткое описание салона -->
+        <div class="salon-description">
+            <h2 class="section-title"><i class="fas fa-heart"></i> Tnl Professional</h2>
+
+            <p>Мы — салон красоты премиум-класса, предлагающий полный спектр услуг для ухода за собой. Наша команда профессионалов с многолетним опытом поможет вам выглядеть безупречно в любой ситуации.</p>
+
+            <p>В нашем салоне используются только сертифицированные косметические средства от ведущих мировых брендов. Мы постоянно следим за новейшими тенденциями в индустрии красоты.</p>
+
+            <div class="highlight">
+                <p><strong>Преимущества:</strong> бесплатная парковка, WI-FI, уютная атмосфера, индивидуальный подход к каждому клиенту, система лояльности.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 Tnl Professional. Все права защищены.</p>
+            <p>+7 (495) 123-45-67 | info@tnl-professional.ru</p>
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="/miniaps/service_flow.js"></script>
+    <script src="/miniaps/specialist_flow.js"></script>
+    <script src="/miniaps/bookings_flow.js"></script>
+    <script src="/miniaps/works_flow.js"></script>
+    <script>
+        const API_BASE = '/api';
+        const appState = {
+            telegramUser: null,
+            client: null
+        };
+
+        function apiGet(path, params) {
+            const url = new URL(API_BASE + path, window.location.origin);
+            if (params) {
+                Object.entries(params).forEach(([k, v]) => {
+                    if (v !== undefined && v !== null && v !== '') {
+                        url.searchParams.set(k, v);
+                    }
+                });
+            }
+            return fetch(url.toString()).then(r => r.json());
+        }
+
+        function apiPost(path, body) {
+            return fetch(API_BASE + path, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body || {})
+            }).then(r => r.json());
+        }
+
+        async function initTelegramClient() {
+            const tg = window.Telegram && window.Telegram.WebApp;
+            let user = null;
+
+            if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
+                user = tg.initDataUnsafe.user;
+            } else {
+                // Режим локального теста без Telegram
+                user = {
+                    id: 'local-test-user',
+                    first_name: 'Тест',
+                    last_name: 'Клиент',
+                    username: 'local_user'
+                };
+            }
+
+            appState.telegramUser = user;
+
+            try {
+                const res = await apiPost('/telegram/me', {
+                    telegram_id: user.id,
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    username: user.username,
+                    photo_url: user.photo_url
+                });
+                if (res.success) {
+                    appState.client = res.data;
+                }
+            } catch (e) {
+                console.error('Ошибка инициализации Telegram клиента', e);
+            }
+        }
+
+        async function loadMyBookings() {
+            const section = document.getElementById('my-bookings-section');
+            const container = document.getElementById('my-bookings-content');
+
+            section.style.display = 'block';
+            container.textContent = 'Загрузка записей...';
+
+            if (!appState.telegramUser) {
+                container.textContent = 'Нет данных о пользователе';
+                return;
+            }
+
+            try {
+                const res = await apiGet('/telegram/my-bookings', {
+                    telegram_id: appState.telegramUser.id
+                });
+
+                if (!res.success) {
+                    container.textContent = res.error || 'Ошибка загрузки записей';
+                    return;
+                }
+
+                const bookings = res.data || [];
+                if (bookings.length === 0) {
+                    container.textContent = 'У вас пока нет записей';
+                    return;
+                }
+
+                // Разделяем на будущие и прошедшие
+                const now = new Date();
+                const upcoming = [];
+                const past = [];
+
+                bookings.forEach(b => {
+                    if (!b.date || !b.time) return;
+                    const dt = new Date(`${b.date}T${b.time}:00`);
+                    if (dt >= now) {
+                        upcoming.push(b);
+                    } else {
+                        past.push(b);
+                    }
+                });
+
+                const renderStatusBadge = (status) => {
+                    const map = {
+                        'PENDING': { text: 'Ожидает подтверждения', cls: 'bg-warning', color: '#856404' },
+                        'CONFIRMED': { text: 'Подтверждена', cls: 'bg-success', color: '#155724' },
+                        'CANCELLED': { text: 'Отменена', cls: 'bg-secondary', color: '#6c757d' },
+                        'COMPLETED': { text: 'Завершена', cls: 'bg-info', color: '#0c5460' }
+                    };
+                    const info = map[status] || { text: status, cls: 'bg-light', color: '#555' };
+                    return `<span style="
+                        display:inline-block;
+                        padding:2px 8px;
+                        border-radius:999px;
+                        font-size:12px;
+                        background:${info.cls === 'bg-light' ? '#f8f9fa' : ''};
+                        color:${info.color};
+                        border:1px solid rgba(0,0,0,0.05);
+                    ">${info.text}</span>`;
+                };
+
+                const renderList = (list, title) => {
+                    if (!list.length) return '';
+                    let html = `<h3 style="font-size:16px;margin:10px 0 8px 0;">${title}</h3>`;
+                    list.forEach(b => {
+                        const serviceName = b.service_name || 'Услуга';
+                        const specName = b.specialist_name || 'Специалист';
+                        const date = b.date;
+                        const time = b.time;
+                        const price = b.price || b.service_price || 0;
+                        const status = b.status || 'PENDING';
+                        html += `
+                            <div class="info-item" style="margin-bottom:10px;">
+                                <div class="info-icon"><i class="fas fa-calendar-check"></i></div>
+                                <div class="info-content">
+                                    <h3 style="margin-bottom:4px;">${serviceName}</h3>
+                                    <p style="margin-bottom:2px;">${date}, ${time}</p>
+                                    <p style="margin-bottom:2px;">${specName}</p>
+                                    <p style="margin-bottom:2px;">Стоимость: ${price} ₽</p>
+                                    <p style="margin-bottom:0;">Статус: ${renderStatusBadge(status)}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    return html;
+                };
+
+                container.innerHTML = '';
+                let html = '';
+                html += renderList(upcoming, 'Ближайшие записи');
+                html += renderList(past, 'Прошедшие записи');
+                container.innerHTML = html || 'У вас пока нет записей';
+            } catch (e) {
+                console.error('Ошибка загрузки записей', e);
+                container.textContent = 'Ошибка загрузки записей';
+            }
+        }
+
+        // Обработчики для кнопок меню
+        document.getElementById('services-btn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            await initServiceFlowSection('select-service-section');
+        });
+
+        document.getElementById('specialists-btn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            await initSpecialistFlowSection('select-specialist-section');
+        });
+
+        document.getElementById('bookings-btn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            await initBookingsFlowSection('select-bookings-section');
+        });
+
+        document.getElementById('booking-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            initWorksFlowSection('select-works-section');
+        });
+
+        document.getElementById('reviews-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Здесь будут отзывы с Яндекс.Карт');
+        });
+    </script>
+</body>
+</html>
